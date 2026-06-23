@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK体育 – 信息聚合导航</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9f9f8;
+      color: #1e2a2c;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* 顶部导航 */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0 1rem;
+      border-bottom: 1px solid #e4e7e6;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      color: #1e2a2c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3d4f54;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1e2a2c;
+    }
+
+    /* 核心介绍区 */
+    .hero {
+      padding: 3.2rem 0 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #3d4f54;
+      max-width: 640px;
+    }
+
+    .hero strong {
+      font-weight: 550;
+      color: #1e2a2c;
+    }
+
+    /* 场景模块 —— 三列卡片 */
+    .scenes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2.8rem 0 3rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.8rem 1.4rem 2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 2px 8px rgba(0,0,0,0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04), 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .scene-card h3 {
+      font-size: 1.1rem;
+      font-weight: 530;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.75rem;
+      color: #1e2a2c;
+    }
+
+    .scene-card p {
+      font-size: 0.92rem;
+      color: #4a5e63;
+      line-height: 1.55;
+    }
+
+    /* 常见说明区域 */
+    .faq-section {
+      margin: 2.5rem 0 3.5rem;
+    }
+
+    .faq-section h2 {
+      font-size: 1.3rem;
+      font-weight: 520;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e8ebea;
+      padding: 0.9rem 0;
+    }
+
+    .faq-item:first-of-type {
+      border-top: 1px solid #e8ebea;
+    }
+
+    .faq-question {
+      font-weight: 520;
+      font-size: 0.98rem;
+      margin-bottom: 0.2rem;
+      color: #1e2a2c;
+    }
+
+    .faq-answer {
+      font-size: 0.9rem;
+      color: #4a5e63;
+      line-height: 1.5;
+    }
+
+    .faq-answer a {
+      color: #1e2a2c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      font-weight: 500;
+    }
+
+    .faq-answer a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    /* 底部 */
+    .footer {
+      text-align: center;
+      padding: 2.2rem 0 2.8rem;
+      font-size: 0.85rem;
+      color: #75888d;
+      border-top: 1px solid #e4e7e6;
+    }
+
+    .footer a {
+      color: #3d4f54;
+      text-decoration: none;
+      font-weight: 450;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding: 1.2rem 0 0.8rem;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .scenes {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .scene-card {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .faq-section h2 {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .hero {
+        padding: 2rem 0 1.8rem;
+      }
+
+      .hero h1 {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 导航 -->
+    <nav class="nav">
+      <span class="nav-brand">MK体育</span>
+      <ul class="nav-links">
+        <li><a href="#scenes">场景</a></li>
+        <li><a href="#faq">说明</a></li>
+      </ul>
+    </nav>
+
+    <!-- 核心介绍 -->
+    <section class="hero">
+      <h1>围绕「MK体育」的信息结构与场景集成</h1>
+      <p>
+        从赛事数据、内容聚合到轻量接入，<strong>MK体育</strong> 提供一套面向信息聚合与导航用途的基础架构。以下从三个典型使用场景展开，便于快速理解其功能覆盖与定位。
+      </p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes" class="scenes">
+      <div class="scene-card">
+        <h3>实时比分与赛程</h3>
+        <p>覆盖主流赛事的分时比分、赛程列表及关键事件时间线。数据更新周期短，适配信息型页面嵌入，适合需要快速查阅赛况的用户。</p>
+      </div>
+      <div class="scene-card">
+        <h3>内容板块参考</h3>
+        <p>提供联赛、队伍、球员等基础信息框架，可结合内容运营搭建赛事百科、赛季回顾或数据看板，适合资讯类站点做结构化延伸。</p>
+      </div>
+      <div class="scene-card">
+        <h3>轻量导航入口</h3>
+        <p>将常用功能与信息模块归拢为统一入口，降低跳转层级。适用于工具型页面或聚合型站点，减少用户在多个页面间的切换成本。</p>
+      </div>
+    </section>
+
+    <!-- 常见说明 (FAQ摘要) -->
+    <section id="faq" class="faq-section">
+      <h2>常见说明</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">MK体育 主要面向哪些使用场景？</div>
+        <div class="faq-answer">
+          主要面向信息型站点、内容聚合页以及需要轻量赛事数据引用的工具场景。不涉及实时交易、投注或任何带有承诺性质的交互。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">数据来源与更新频率如何？</div>
+        <div class="faq-answer">
+          数据经由公开接口与合规渠道整合，更新频率依据赛事进程而定（通常为分钟级）。具体字段在接入文档中有更详细的描述。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">如何获取更多信息或接入说明？</div>
+        <div class="faq-answer">
+          可参考 <a href="https://apponline-mksports.com">MK体育</a> 主站的内容结构，其中包含更完整的模块说明与使用指引。如需进一步讨论，建议通过站内联系方式沟通。
+        </div>
+      </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <span>MK体育 · 信息导航页</span>
+    </footer>
+  </div>
+</body>
+</html>
